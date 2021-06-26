@@ -1,6 +1,24 @@
-<ag-grid-angular
-  style="width: 700px; height: 500px;"
-  class="ag-theme-balham"
-  [rowData]="rowData"
-  [columnDefs]="columnDefs"
-></ag-grid-angular>
+<div class="test-container">
+  <div class="test-header">
+    <div class="example-section">
+      <button (click)="saveState()">Save State</button>
+      <button (click)="restoreState()">Restore State</button>
+      <button (click)="resetState()">Reset State</button>
+    </div>
+  </div>
+  <ag-grid-angular
+    #agGrid
+    style="width: 800px; height: 500px;"
+    id="myGrid"
+    class="ag-theme-balham"
+    [modules]="modules"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [sideBar]="sideBar"
+    [rowGroupPanelShow]="rowGroupPanelShow"
+    [pivotPanelShow]="pivotPanelShow"
+    [debug]="true"
+    [rowData]="rowData"
+    (gridReady)="onGridReady($event)"
+  ></ag-grid-angular>
+</div>
